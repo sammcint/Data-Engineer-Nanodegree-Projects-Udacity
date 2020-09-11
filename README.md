@@ -20,7 +20,8 @@
 * Select the appropriate primary key and clustering columns for a given use case
 * Create a NoSQL database in Apache Cassandra
 
-**Project 1:** Data Modeling with Postgres
+**Project 1:** Data Modeling with Postgres 
+
 **Project 2:** Data Modeling with Apache Cassandra
 
 ### Course 2: Cloud Data Warehouses 
