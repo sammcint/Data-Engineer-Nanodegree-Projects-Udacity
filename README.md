@@ -20,8 +20,8 @@
 * Select the appropriate primary key and clustering columns for a given use case
 * Create a NoSQL database in Apache Cassandra
 
-Project 1: Data Modeling with Postgres
-Project 2: Data Modeling with Apache Cassandra
+**Project 1:** Data Modeling with Postgres
+**Project 2:** Data Modeling with Apache Cassandra
 
 ### Course 2: Cloud Data Warehouses 
 ------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ Project 2: Data Modeling with Apache Cassandra
 * Set up AWS infrastructure using Infrastructure as Code (IaC)
 * Design an optimized table by selecting the appropriate distribution style and sorting key 
 
-Project 3: Build a Cloud Data Warehouse
+**Project 3:** Build a Cloud Data Warehouse
  * Build an ELT pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables.
 
 ### Course 3: Spark and Data Lakes 
@@ -65,7 +65,7 @@ Project 3: Build a Cloud Data Warehouse
 * Implement data lakes on Amazon S3, EMR, Athena, and Amazon Glue
 * Use Spark to run ELT processes and analytics on data of diverse sources, structures, and vintages
 
-Project 4: Build an ETL pipeline for a data lake. The data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in the app. Load data from S3, process the data into analytics tables using Spark, and load them back into S3. Deploy this Spark process on a cluster using AWS.
+**Project 4:** Build an ETL pipeline for a data lake. The data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in the app. Load data from S3, process the data into analytics tables using Spark, and load them back into S3. Deploy this Spark process on a cluster using AWS.
 
 ### Course 4: Automate Data Pipelines
 -----------------------------------------------------------------------------
@@ -88,4 +88,4 @@ Project 4: Build an ETL pipeline for a data lake. The data resides in S3, in a d
 * Set up task boundaries 
 * Monitor data pipelines
 
-Project 5: Create and automate a set of data pipelines. Configure and schedule data pipelines with Airflow and monitor and debug production pipelines
+**Project 5:** Create and automate a set of data pipelines. Configure and schedule data pipelines with Airflow and monitor and debug production pipelines
