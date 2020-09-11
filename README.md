@@ -1,6 +1,16 @@
 # Data-Engineer-Nanodegree-Projects-Udacity
  This repository serves as the location of all projects completed in the [Data Engineer Nanodegree by Udacity.com](https://www.udacity.com/course/data-engineer-nanodegree--nd027)
 
+### Educational Objectives:
+* Create user-friendly relational and NoSQL data models
+* Create scalable and efficient data warehouses 
+* Work efficiently with massive datasets 
+* Build and interact with a cloud-based data lake 
+* Automate and monitor data pipelines
+* Develop proficiency in Spark, Airflow, and AWS tools 
+
+
+
 ### Course 1: Data Modeling
 ------------------------------------------------------------------------------
 
