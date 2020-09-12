@@ -39,7 +39,7 @@ The log files in the dataset you'll be working with are partitioned by year and 
 
 And below is an example of what the data in a log file, 2018-11-12-events.json, looks like:
 
-!(https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/Project-03-DataWarehouse/images/2018-11-12-events.PNG)
+![Log File](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/Project-03-DataWarehouse/images/2018-11-12-events.PNG)
 
 # Schema for Song Play Analysis
 ----------------------------------------------------
