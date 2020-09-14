@@ -17,6 +17,41 @@ For this project, I worked with two datasets. Here are the s3 links for each:
 - Log data: s3://udacity-dend/log_data
 - Song data: s3://udacity-dend/song_data
 
+# Add Airflow Connections 
+
+Here, we'll use Airflow's UI to configure AWS credentials and connection to Redshift
+
+1. Click on the **Admin** tab and select **Connections**
+![](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/AirflowConnection1.PNG)
+
+1. Under **Connections**, select **Create**
+![](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/AirflowConnection2.PNG)
+
+1. On the create connection page, enter the following values
+* **Conn Id:** Enter aws_credentials
+* **Conn Type:** Enter Amazon Web Services
+* **Login:** Enter your **Access key ID** from the IAM User credentials
+* **Password:** Enter your Secret access key from the IAM User credentials 
+
+Once you've entered these values, select **Save and Add Another**
+
+![](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/AirflowConnection3.PNG)
+
+1. On the next create connection page, enter the following values:
+* **Conn Id:** Enter redshift
+* **Conn Type:** Enter Postgres
+* **Host:** Enter the endpoint of your Redshift cluster, excluding the port at the end. You can find this by selecting your cluster in the **Clusters** page of the Amazon Redshift console. See where this is located in the screenshot below. IMPORTANT: Make sure to **NOT** include the port at the end of the Redshift endpoint string.
+* **Schema:** Enter dev. This is the Redshift database you want to connect to.
+* **Login:** Enter awsuser 
+* **Password:** Enter the password you created when launching your Redshift cluster.
+* **Port:** Enter 5439
+
+Once you've entered these values, select **Save**
+
+![](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/AirflowConnection4.PNG)
+
+![](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/AirflowConnection5.PNG)
+
 # Project Template
 
 The project template package contains three major components for the project:
