@@ -38,4 +38,4 @@ In the DAG, add default parameters according to these guidelines
 Final DAG:
 
 ![alt text](http://url/to/img.png)
-(https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/sparkify_dag.PNG)
+![](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/sparkify_dag.PNG)
