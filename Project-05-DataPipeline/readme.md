@@ -35,4 +35,7 @@ In the DAG, add default parameters according to these guidelines
 - Do not email on retry
 - In addition, configure the task dependencies so that after the dependencies are set, the graph view follows the flow shown in the image below.
 
-Final DAG
+Final DAG:
+
+![alt text](http://url/to/img.png)
+(https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/sparkify_dag.PNG)
