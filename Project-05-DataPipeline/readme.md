@@ -74,3 +74,25 @@ Final DAG:
 
 
 ![](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/sparkify_dag.PNG)
+
+# Operators
+
+Operators create necessary tables, stage the data, transform the data, and run checks on data quality.
+
+Connections and Hooks are configured using Airflow's built-in functionalities.
+
+All of the operators and task run SQL statements against the Redshift database.
+
+### Stage Operator
+
+The stage operator loads any JSON and CSV formatted files from S3 to Amazon Redshift. The operator creates and runs a SQL COPY statement based on the parameters provided. The operator's parameters should specify where in S3 the file is loaded and what is the target table.
+
+### Fact and Dimension Operators
+
+The dimension and fact operators make use of the SQL helper class to run data transformations. Operators take as input the SQL statement from the helper class and target the database on which to run the query against. A target table is also defined that contains the results of the transformation.
+
+Dimension loads are done with the truncate-insert pattern where the target table is emptied before the load. There is a parameter that allows switching between insert modes when loading dimensions. Fact tables are massive so they only allow append type functionality.
+
+### Data Quality Operator
+
+The data quality operator is used to run checks on the data itself. The operator's main functionality is to receive one or more SQL based test cases along with the expected results and execute the tests. For each the test, the test result and expected result are checked and if there is no match, the operator raises an exception and the task is retried and fails eventually.
