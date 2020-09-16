@@ -5,7 +5,7 @@ A music streaming startup, Sparkify, has grown their user base and song database
 
 As the data engineer, I have been tasked with building an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights in what songs their users are listening to. I was able to test my database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare my results with their expected results.
 
-To do this, I applied what I've learned on data warehouses and AWS to build an ETL pipeline for a database hosted on Redshift. To complete the project, I had to load data from S3 to staging tables on Redshift and execute SQL statements that create the analytics tables from these staging tables.
+In this project, I applied what I learned on Spark and data lakes to build an ETL pipeline for a data lake hosted on S3. To complete the project, I needed to load data from S3, process the data into analytics tables using Spark, and load it back into S3. Deployed this Spark process on a cluster using AWS.
 
 
 # Project Datasets
