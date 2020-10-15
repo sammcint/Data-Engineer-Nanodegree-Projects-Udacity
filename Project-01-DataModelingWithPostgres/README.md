@@ -10,7 +10,7 @@ They'd like a data engineer to create a Postgres database with tables designed t
 ------------------------------------------------
 For this project, I applied what I learned on data modeling with Postgres and built an ETL pipeline using Python. I defined fact and dimension tables for a star schema, and wrote an ETL pipeline that transfers data from files in two local directories into tables in Postgres using Python and SQL.
 
-The purpose of creating this database was so that Sparkify could have an easier way of analyzing their data that they have been collectong on songs and user activity in their new music streaming app.Previously, there wasn't an easy way for them to query their data, because it was all stored in JSON logs as well as a directory with JSON metadata. Now, with the creation of the fact and dimension tables, as well as the ETL pipeline that transfers data from files into the new tables, Sparkify will be able to analyze their data at a much greater speed.
+The purpose of creating this database was so that Sparkify could have an easier way of analyzing their data that they have been collecting on songs and user activity in their new music streaming app.Previously, there wasn't an easy way for them to query their data, because it was all stored in JSON logs as well as a directory with JSON metadata. Now, with the creation of the fact and dimension tables, as well as the ETL pipeline that transfers data from files into the new tables, Sparkify will be able to analyze their data at a much greater speed.
 
 ## Project Template
 ------------------------------------------------
