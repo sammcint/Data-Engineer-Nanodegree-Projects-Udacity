@@ -21,11 +21,12 @@ class DataQualityOperator(BaseOperator):
         self.tables = tables
         self.sql_query = sql_query
 
-    def execute(self, context):
+    def execute(self, context): 
         redshift_hook = PostgresHook(postgres_conn_id = self.redshift_conn_id)
         for tables in self.tables:  
             self.log.info(f"Starting data quality validation on tables : {tables}")
             records = redshift_hook.get_records(f"select count(*) from {tables};")
             if len(records) < 1 or len(records[0]) < 1 or records[0][0] < 1:
                 self.log.error(f"Data Quality validated failed for tables: {tables}")
-            self.log.info(f"Data Quality Validated Passed on Tables : {tables}")
+            else:
+                self.log.info(f"Data Quality Validated Passed on Tables : {tables}")
