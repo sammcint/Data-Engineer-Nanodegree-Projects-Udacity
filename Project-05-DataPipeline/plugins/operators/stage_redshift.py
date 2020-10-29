@@ -1,4 +1,5 @@
 from airflow.hooks.postgres_hook import PostgresHook
+from airflow.hooks.postgres_hook import PostgresHook
 from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 from airflow.contrib.hooks.aws_hook import AwsHook
@@ -12,7 +13,7 @@ class StageToRedshiftOperator(BaseOperator):
         ACCESS_KEY_ID '{}'
         SECRET_ACCESS_KEY '{}'
         TIMEFORMAT AS 'epochmillisecs'
-        FORMAT AS JSON 'auto' 
+        FORMAT AS JSON '{}' 
     """
 
     @apply_defaults
@@ -22,8 +23,7 @@ class StageToRedshiftOperator(BaseOperator):
                  table="",
                  s3_bucket="",
                  s3_key="",
-                 delimiter=",",
-                 ignore_headers=1,
+                 copy_json_option="auto",
                  *args, **kwargs):
 
         super(StageToRedshiftOperator, self).__init__(*args, **kwargs)
@@ -32,8 +32,7 @@ class StageToRedshiftOperator(BaseOperator):
         self.table = table
         self.s3_bucket = s3_bucket
         self.s3_key = s3_key
-        self.delimiter = delimiter
-        self.ignore_headers = ignore_headers
+        self.copy_json_option = copy_json_option
 
     def execute(self, context):
         # AWS connection
@@ -60,7 +59,8 @@ class StageToRedshiftOperator(BaseOperator):
             self.table,
             s3_path,
             credentials.access_key,
-            credentials.secret_key
+            credentials.secret_key,
+            self.copy_json_option
         )
 
         redshift.run(copy_data_sql)
