@@ -1,4 +1,3 @@
-  
 from airflow.hooks.postgres_hook import PostgresHook
 from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
@@ -31,4 +30,3 @@ class LoadFactOperator(BaseOperator):
             sql_statement = (f"DELETE FROM {self.table_name}{self.sql_statement}")
             redshift.run(sql_statement)
         self.log.info('Fact table %s load finished' % self.table_name)
-
