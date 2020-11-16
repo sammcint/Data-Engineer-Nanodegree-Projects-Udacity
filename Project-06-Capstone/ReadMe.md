@@ -1,14 +1,19 @@
 #### Overview
 
-The purpose of this project is to provide a public database for stock market analysts to query, analyze, and transform data into actionable insights. The application uses Apache Airflow to kick off jobs(Python ETL scripts) that load data that is stored in JSON and CSV format in a bucket on Amazon S3. The data pipeline reads in the data from S3, creates and inserts data into tables hosted on Redshift. The redshift database and tables can be accessed by anyone with appropriate credentials.
+The purpose of this project is to provide a public database for stock market analysts to query, analyze, and transform data into actionable insights. The application uses Apache Airflow to kick off jobs(Python ETL scripts) that load data that is stored in JSON and CSV format in a bucket on Amazon S3. The data pipeline utilizes python to read in the data from S3, creates and inserts data into tables hosted on Redshift. The redshift database and tables can be accessed by anyone with appropriate credentials and is where the analysis on the final data can take place. 
 
 
 #### **Source Data**
 This project draws on historical stock data found on Kaggle. The data consists of daily stock prices for a selection of several thousand stock tickers from NYSE and NASDAQ. Unfortunately, it was not possible to parse the data in a manner that allowed exact decimal calculations, so floating point numbers were provided. You can find the dataset here: https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018
 
+#### Tools used 
+* **Python** is used as one of the programming languases because of its ease-of-use and fexibility 
+* **SQL** is used for syntax of the table structure and insertion of records 
+* **S3** is used as the data storage for the stock data because of its scalability, and support of multiple file formats 
+* **Airflow** is used to orchestrate the steps of the ETL pipeline because of its powerful schedule and monitoring features
+* **Redshift** is used to host the data table because of its ease-of-access and ability to handle OLAP for big data 
 
-
-#### Tables 
+### Tables 
 
 
 #### **HistoricalStocks**
@@ -47,7 +52,7 @@ This project draws on historical stock data found on Kaggle. The data consists o
 
 
 #### **ERD**
-
+ * Database design is as follows:
 ![Database Design](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/Capstone-ERD.png)
 
 #### **Example Queries of Analysis** ####
@@ -63,14 +68,22 @@ This project draws on historical stock data found on Kaggle. The data consists o
 	LEFT JOIN INDUSTRIES I ON HSS.Industry = I.IndustryName
 	where hss.ticker = 'AAL' and hsp.date like '2017%') order by open_price/previousopen asc  LIMIT 5
 
+#### Potential Scenarios
+
+Eventually the project may have to address these scenarios if it grows and evolves in its use:
+
+**The data was increased by 100** 
+	- This would require creating a clutser on redshift that holds more nodes. The more nodes the cluster has, the more data it can store. 
+
+**The pipelines would be run on a daily basis by 7 am each day:**
+	- This would require a change to the airflow dag schedule configuration. 
+		dag = DAG(
+    		schedule_interval='0 7 * * *',
+    		default_args=args
+		)
+
+**The database needed to be accessed by 100+ people**
+	- This would require making universal IAM, Security Group, and Permission Roles for a set of users in which they would share the password and secret password of the IAM user.
 
 
-##### **For each sector find the the worst and best year
 
-
-Instructions:
-
-Install Airflow
-Set up Cluster in Redshift 
-Launch Airflow
-Set up connections in Airflow
