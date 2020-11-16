@@ -77,7 +77,8 @@ Eventually the project may have to address these scenarios if it grows and evolv
 	- This would require creating a clutser on redshift that holds more nodes. The more nodes the cluster has, the more data it can store. 
 
 **The pipelines would be run on a daily basis by 7 am each day:**
-	- This would require a change to the airflow dag schedule configuration in the capstone_project_dag.py file
+	- This would require a change to the airflow dag schedule configuration in the capstone_project_dag.py file  
+	
 		>>dag = DAG('capstone_dag',  
           	>>default_args=default_args,  
           	>>description='Load and transform data in Redshift with Airflow',  
