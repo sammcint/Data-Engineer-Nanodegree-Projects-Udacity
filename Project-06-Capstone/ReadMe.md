@@ -36,15 +36,19 @@ This project draws on historical stock data found on Kaggle. The data consists o
 
 
 #### **Sectors**
+* Sectors table - Reference table for sectors and their corresponding names
 	- *SectorId* int: Id of the sector 
 	- *Name* varchar: Name of the Sector
 
 #### **Industries**
+* Industries table - Reference table for industries and their corresponding names 
 	- *IndustryId* int: Id of the industry
 	- *IndustryName* varchar: Name of the Industry 
 
 
 #### **ERD**
+
+![Database Design](https://github.com/sammcint/Data-Engineer-Nanodegree-Projects-Udacity/blob/master/images/Capstone-ERD.png)
 
 #### **Example Queries of Analysis** ####
 
