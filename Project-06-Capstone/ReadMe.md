@@ -61,7 +61,8 @@ This project draws on historical stock data found on Kaggle. The data consists o
 
 	'''
 	select ticker, date, ROUND(1 - open_price/previousopen,2)"Percent decrease from previous day" FROM  (
-	SELECT hsp.ticker, hsp.date, hsp.open_price, hsp.close_price, LAG(hsp.close_price) OVER (PARTITION BY hsp.ticker order by hsp.ticker, hsp.date) "previousopen"
+	SELECT hsp.ticker, hsp.date, hsp.open_price, hsp.close_price, 
+	LAG(hsp.close_price) OVER (PARTITION BY hsp.ticker order by hsp.ticker, hsp.date) "previousopen"
 	FROM HISTORICALSTOCKSSTAGING HSS
 	JOIN HISTORICALSTOCKPRICES HSP on HSP.ticker = hss.ticker
 	LEFT JOIN SECTORS S ON UPPER(HSS.Sector) = UPPER(S.Sector)
