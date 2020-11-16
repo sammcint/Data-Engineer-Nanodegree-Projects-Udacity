@@ -54,17 +54,16 @@ This project draws on historical stock data found on Kaggle. The data consists o
 
  * **Which 5 days in January did American Airlines (AAL) have the greatest percentage decrease over the previous day? 
 
-{
-        select ticker, date, ROUND(1 - open_price/previousopen,2)"Percent decrease from previous day" FROM  (
-        SELECT hsp.ticker, hsp.date, hsp.open_price, hsp.close_price, LAG(hsp.close_price) OVER (PARTITION BY hsp.ticker order by hsp.ticker, hsp.date) "previousopen"
-        FROM HISTORICALSTOCKSSTAGING HSS
-        JOIN HISTORICALSTOCKPRICES HSP on HSP.ticker = hss.ticker
-        LEFT JOIN SECTORS S ON UPPER(HSS.Sector) = UPPER(S.Sector)
-        LEFT JOIN INDUSTRIES I ON HSS.Industry = I.IndustryName
-        where hss.ticker = 'AAL'  
-        and hsp.date like '2017%') order by open_price/previousopen asc  LIMIT 5
 
-}
+	select ticker, date, ROUND(1 - open_price/previousopen,2)"Percent decrease from previous day" FROM  (
+	SELECT hsp.ticker, hsp.date, hsp.open_price, hsp.close_price, LAG(hsp.close_price) OVER (PARTITION BY hsp.ticker order by hsp.ticker, hsp.date) "previousopen"
+	FROM HISTORICALSTOCKSSTAGING HSS
+	JOIN HISTORICALSTOCKPRICES HSP on HSP.ticker = hss.ticker
+	LEFT JOIN SECTORS S ON UPPER(HSS.Sector) = UPPER(S.Sector)
+	LEFT JOIN INDUSTRIES I ON HSS.Industry = I.IndustryName
+	where hss.ticker = 'AAL' and hsp.date like '2017%') order by open_price/previousopen asc  LIMIT 5
+
+
 
 ##### **For each sector find the the worst and best year
 
