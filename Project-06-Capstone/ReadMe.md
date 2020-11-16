@@ -36,12 +36,12 @@ This project draws on historical stock data found on Kaggle. The data consists o
 
 
 #### **Sectors**
-	-*SectorId* int: Id of the sector 
-	-*Name* varchar: Name of the Sector
+	- *SectorId* int: Id of the sector 
+	- *Name* varchar: Name of the Sector
 
 #### **Industries**
-	-*IndustryId* int: Id of the industry
-	-*IndustryName* varchar: Name of the Industry 
+	- *IndustryId* int: Id of the industry
+	- *IndustryName* varchar: Name of the Industry 
 
 
 #### **ERD**
