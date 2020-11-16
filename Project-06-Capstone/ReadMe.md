@@ -77,11 +77,12 @@ Eventually the project may have to address these scenarios if it grows and evolv
 	- This would require creating a clutser on redshift that holds more nodes. The more nodes the cluster has, the more data it can store. 
 
 **The pipelines would be run on a daily basis by 7 am each day:**
-	- This would require a change to the airflow dag schedule configuration. 
-		dag = DAG(
-    		schedule_interval='0 7 * * *',
-    		default_args=args
-		)
+	- This would require a change to the airflow dag schedule configuration in the capstone_project_dag.py file
+		>>dag = DAG('capstone_dag',  
+          	>>default_args=default_args,  
+          	>>description='Load and transform data in Redshift with Airflow',  
+          	>>schedule_interval='0 7 * * *'  
+        )
 
 **The database needed to be accessed by 100+ people**
 	- This would require making universal IAM, Security Group, and Permission Roles for a set of users in which they would share the password and secret password of the IAM user.
