@@ -4,7 +4,7 @@ The purpose of this project is to provide a public database for stock market ana
 
 
 #### **Source Data**
-This project draws on historical stock data found on Kaggle. The data consists of daily stock prices for a selection of several thousand stock tickers from NYSE and NASDAQ. Unfortunately, it was not possible to parse the data in a manner that allowed exact decimal calculations, so floating point numbers were provided. ***URL HERE****
+This project draws on historical stock data found on Kaggle. The data consists of daily stock prices for a selection of several thousand stock tickers from NYSE and NASDAQ. Unfortunately, it was not possible to parse the data in a manner that allowed exact decimal calculations, so floating point numbers were provided. You can find the dataset here: https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018
 
 
 
