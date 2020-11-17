@@ -1,6 +1,6 @@
 #### Overview
 
-The purpose of this project is to provide a public database for stock market analysts to query, analyze, and transform data into actionable insights. The application uses Apache Airflow to kick off jobs(Python ETL scripts) that load data that is stored in JSON and CSV format in a bucket on Amazon S3. The data pipeline utilizes python to read in the data from S3, creates and inserts data into tables hosted on Redshift. The redshift database and tables can be accessed by anyone with appropriate credentials and is where the analysis on the final data can take place. 
+The purpose of this project is to provide a public database for stock market analysts to query, analyze, and transform data into actionable insights. The application uses Apache Airflow to kick off jobs(Python ETL scripts) that load data that is stored in JSON and CSV format in a bucket on Amazon S3. The data pipeline utilizes python to read in the data from S3, creates and inserts data into tables hosted on Redshift. The redshift database and tables can be accessed by anyone with appropriate credentials and this is where stock market analysis on the final data can take place. 
 
 
 #### **Source Data**
@@ -86,7 +86,9 @@ Eventually the project may have to address these scenarios if it grows and evolv
         )
 
 **The database needed to be accessed by 100+ people**
-	- This would require making universal IAM, Security Group, and Permission Roles for a set of users in which they would share the password and secret password of the IAM user.
+	- This would require making universal IAM, Security Group, and Permission Roles for a set of users in which they would share the password and secret password of the IAM user. A separate user table could also be configured for keeping track of users logging in and out and whenever there is a spike in user activity, additional custers can be initiated
+	
+	
 
 
 
