@@ -2,6 +2,10 @@
 
 The purpose of this project is to provide a public database for stock market analysts to query, analyze, and transform data into actionable insights. The application uses Apache Airflow to kick off jobs(Python ETL scripts) that load data that is stored in JSON and CSV format in a bucket on Amazon S3. The data pipeline utilizes python to read in the data from S3, creates and inserts data into tables hosted on Redshift. The redshift database and tables can be accessed by anyone with appropriate credentials and this is where stock market analysis on the final data can take place. 
 
+## Technology decisions
+
+Amazon Redshift was chosen as the database host as opposed to another Amazon RDS for this project because Redshift is used primarily for reporting and analytics, whereas Amazon RDS is designed for online-transaction processing (OLTP). 
+
 
 #### **Source Data**
 This project draws on historical stock data found on Kaggle. The data consists of daily stock prices for a selection of several thousand stock tickers from NYSE and NASDAQ. Unfortunately, it was not possible to parse the data in a manner that allowed exact decimal calculations, so floating point numbers were provided. You can find the dataset here: https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018
