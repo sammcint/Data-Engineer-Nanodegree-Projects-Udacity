@@ -9,10 +9,6 @@ Amazon Redshift was chosen as the database host as opposed to another Amazon RDS
 source: [When would I use Amazon Redshift vs. Amazon RDS?](https://aws.amazon.com/redshift/faqs/#:~:text=Both%20Amazon%20Redshift%20and%20Amazon,primarily%20for%20reporting%20and%20analytics.)
 
 
-source: [When would I use Amazon Redshift vs. Amazon RDS?](https://aws.amazon.com/redshift/faqs/#:~:text=Both%20Amazon%20Redshift%20and%20Amazon,primarily%20for%20reporting%20and%20analytics. "Google's Homepage")
-
-
-
 #### **Source Data**
 This project draws on historical stock data found on Kaggle. The data consists of daily stock prices for a selection of several thousand stock tickers from NYSE and NASDAQ. Unfortunately, it was not possible to parse the data in a manner that allowed exact decimal calculations, so floating point numbers were provided. You can find the dataset here: https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018
 
