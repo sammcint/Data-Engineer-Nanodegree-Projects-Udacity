@@ -10,7 +10,7 @@ source: [When would I use Amazon Redshift vs. Amazon RDS?](https://aws.amazon.co
 
 
 #### **Source Data**
-This project draws on historical stock data found on Kaggle. The data consists of daily stock prices for a selection of several thousand stock tickers from NYSE and NASDAQ. Unfortunately, it was not possible to parse the data in a manner that allowed exact decimal calculations, so floating point numbers were provided. You can find the dataset here: https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018
+This project draws on historical stock data found on Kaggle. The data consists of daily stock prices for a selection of several thousand stock tickers from NYSE and NASDAQ from the years 1970-2018, and is stored in csv file size of 1.5 gb. It was not possible to parse the data in a manner that allowed exact decimal calculations, so floating point numbers were provided. You can find the dataset here: https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018
 
 #### Tools used 
 * **Python** is used as one of the programming languases because of its ease-of-use and fexibility 
@@ -63,7 +63,7 @@ This project draws on historical stock data found on Kaggle. The data consists o
 
 #### **Example Queries of Analysis** ####
 
- * **Which 5 days in January did American Airlines (AAL) have the greatest percentage decrease over the previous day? 
+ * **Which 5 days in January did American Airlines (AAL) have the greatest percentage decrease from the previous day? 
 
     >>select ticker, date, ROUND(1 - open_price/previousopen,2)"Percent decrease from previous day" FROM  (  
     >>SELECT hsp.ticker, hsp.date, hsp.open_price, hsp.close_price,  
