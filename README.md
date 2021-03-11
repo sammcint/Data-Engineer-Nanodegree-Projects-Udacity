@@ -1,5 +1,5 @@
 # Data-Engineer-Nanodegree-Projects-Udacity
- This repository serves as the location of all projects completed in the [Data Engineer Nanodegree by Udacity.com](https://www.udacity.com/course/data-engineer-nanodegree--nd027)
+Repository for all projects completed in the [Data Engineer Nanodegree by Udacity.com](https://www.udacity.com/course/data-engineer-nanodegree--nd027)
 
 ### Educational Objectives:
 * Create user-friendly relational and NoSQL data models
